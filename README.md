@@ -27,21 +27,21 @@ data
     ├── ...
 
 ```
-Use your own custom dataset for data loading or **CatDogDataset** in ```datasets.py```.
+Use your own custom dataset for data loading or **CatDogDataset** in ```datasets.py```.  
 
 #### Setting
-About model path, dataset path and training related parameters, see the details in `config.py`.
+About model path, dataset path and training related parameters, see the details in `config.py`.  
 
 #### Train
-The default model is finetuned from EfficientNet-B5.
-If you are testing different models, use `python train.py`. It will consider k-fold cross-validation. (k default value: 5)
-If you are trainig for all datasets, use `python train_all.py`.
+The default model is finetuned from EfficientNet-B5.  
+If you are testing different models, use `python train.py`. It will consider k-fold cross-validation. (k default value: 5)  
+If you are trainig for all datasets, use `python train_all.py`.  
 
 #### Evaluate
-Tools for evaluation. After training, some training process will be record to `record.npz`.
-These tools can plot Training/Validation loss, Training/Validation Accuracy, Confusion Matrix and ROC curve. Use them to evaluate the best model.
+Tools for evaluation. After training, some training process will be record to `record.npz`.  
+These tools can plot Training/Validation loss, Training/Validation Accuracy, Confusion Matrix and ROC curve. Use them to evaluate the best model.  
 
-Use `python evaluate.py --npz_path ./checkpoints/record.npz --plot all` to generate all evaluation results.
+Use `python evaluate.py --npz_path ./checkpoints/record.npz --plot all` to generate all evaluation results.  
 
 <pre style="font-size: 14px;">
 
@@ -62,15 +62,16 @@ optional arguments:
 
 </pre>
 
-**Reminder** record.npz only be generated from `train.py`
-This model performance under 5-Fold Avearge is: **Val Acc:0.9831, Precision: 0.9857, Recall: 0.9804, F1-Score: 0.9831**
-image examples:
+**Reminder** record.npz only be generated from `train.py`  
+This model performance under 5-Fold Avearge is: **Val Acc:0.9831, Precision: 0.9857, Recall: 0.9804, F1-Score: 0.9831**  
+image examples:  
 <img src="./samples/5-folds_Learning_curves.png" alt="Learning Curve" width="640" height="720">
 <img src="./samples/5-folds_ROC.png" alt="ROC Curve" width="360" height="360">
 <img src="./samples/Last_epoch_confusion_matrix.png" alt="Confusion Matrix" width="840" height="480">
 
 #### Predict
-Use `python predict.py` to generate submission csv files for Kaggle. (The raw competition is closed, you can try [this one](https://www.kaggle.com/competitions/dogs-vs-cats-redux-kernels-edition/submissions) instead.)
+Use `python predict.py` to generate submission csv files for Kaggle.   
+(The raw competition is closed, you can try [this one](https://www.kaggle.com/competitions/dogs-vs-cats-redux-kernels-edition/submissions) instead.)  
 
 <pre style="font-size: 14px;">
 usage: predict.py [-h] [--checkpoint_path CHECKPOINT_PATH]
@@ -86,6 +87,7 @@ optional arguments:
   --csv_name CSV_NAME   submission csv filename (default:
                         args.checkpoint_path/preds.csv)
 </pre>
-If you want to reproduce my experimental data, please use the following command to load the model: `python predict.py --checkpoints_path ./checkpoints/model.pth`. The submission score is **0.39236**.
-The model link: (put under the ./checkpoints/ directory.)
-`wget "https://drive.usercontent.google.com/download?id=1nw3RCXgU720fhOUWCnydQnfxUFW4EvWD&export=download&authuser=5&confirm=t&uuid=989ac8f1-9fd4-434f-83c8-df54cdd43b0e&at=APZUnTVkGu2fVUby8NsvrF7wl98b:1706828674636" -O ./checkpoints/model.pth `
+If you want to reproduce my experimental data, please use the following command to load the model: `python predict.py --checkpoints_path ./checkpoints/model.pth`.   
+The submission score is **0.39236**.  
+Get the model by `wget`: (put under the ./checkpoints/ directory.)      
+```wget "https://drive.usercontent.google.com/download?id=1nw3RCXgU720fhOUWCnydQnfxUFW4EvWD&export=download&authuser=5&confirm=t&uuid=989ac8f1-9fd4-434f-83c8-df54cdd43b0e&at=APZUnTVkGu2fVUby8NsvrF7wl98b:1706828674636" -O ./checkpoints/model.pth```  
