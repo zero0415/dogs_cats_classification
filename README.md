@@ -89,5 +89,5 @@ optional arguments:
 </pre>
 If you want to reproduce my experimental data, please use the following command to load the model: `python predict.py --checkpoints_path ./checkpoints/model.pth`.   
 The submission score is **0.39236**.  
-Get the [model]("https://drive.google.com/file/d/1nw3RCXgU720fhOUWCnydQnfxUFW4EvWD/view?usp=sharing")  by `wget`: (put under the ./checkpoints/ directory.)      
+Get the [model](https://drive.google.com/file/d/1nw3RCXgU720fhOUWCnydQnfxUFW4EvWD/view?usp=sharing)  by `wget`: (put under the ./checkpoints/ directory.)      
 ```wget "https://drive.usercontent.google.com/download?id=1nw3RCXgU720fhOUWCnydQnfxUFW4EvWD&export=download&authuser=5&confirm=t&uuid=989ac8f1-9fd4-434f-83c8-df54cdd43b0e&at=APZUnTVkGu2fVUby8NsvrF7wl98b:1706828674636" -O ./checkpoints/model.pth```  
